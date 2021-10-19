@@ -1,0 +1,90 @@
+CODIGO USADO NO OVERLEAF
+
+\documentclass[12pt]{article}
+
+\usepackage{sbc-template}
+
+\usepackage{graphicx,url}
+
+%\usepackage[brazil]{babel}   
+\usepackage[utf8]{inputenc}  
+
+     
+\sloppy
+
+\title{ARQ1 Artigo - Arquitetura de Computadores}
+
+\author{Cecília Capurucho Bouchardet}
+ 
+
+
+\address{Curso de Computação –– Pontíficia Universidade Católica de Minas Gerais\\(PUC-Minas)
+ \email{\ cbouchardet@sga.pucminas.br}
+}
+
+\begin{document}
+
+\maketitle
+
+\section{Propriedades} \label{sec:firstpage}
+\subsection{Questão 2}
+Uma constante
+
+
+
+\subsection{Questão 3}
+Segundo os textos recomendados, definir e caracterizar
+\\
+\\ASIC: (Application-specific integrated circuit)tem a necessidade de um processo de fabricação especial, que requer máscaras específicas para cada projeto. Essa característica acarreta em altos custos de projeto e um longo tempo de desenvolvimento para esse tipo de implementação, em caso de
+grandes implementações esse alto custo é amortizado.
+\\
+\\ASSP:  (Application-specific standard parts) possuiu as mesmas características de um ASIC, são enssencialmente a mesma coisa. A única diferença é que um ASSP é um dispositivo de propósito mais geral e é usado por diferentes sistemas em diferentes projetos. 
+\\
+\\SPLD: ou (Simple PLDs(Programmable Logic Device)) é uma categoria que agrupa todos os pequenos PLDs,como PLAs, PALs, e outros dispositivos similares, cujas caracteristicas mais importantes são o baixo custo e alto desempenho. 
+\\
+\\CPLD: (Complex Programmable Logic Device) são dispositivos com maior capacidade
+baseados na arquitetura SPLD. Isso devdo a integração de múltiplos SPLDs em um único chip e prover interconexão programável para os blocos SPLDs. Algumas características positivas são baixo custo e alta velocidade e negativa é que é difícil extender essa arquitetura para maiores densidades.
+\\
+\\SOC: (System-on-Chip) se refere a todos os componentes de um computador, ou qualquer outro sistema eletrônico, em um circuito integrado. Ele pode conter funções digitais, analógicas, mistas e, muitas vezes, de Radiofrequência - RF; tudo em um. Suas caracteristicas se assemelham -se a um microcontrolador.
+\\
+\\FPGA: (Field Programmable Gate Array) consiste de um grande arranjo de células configuráveis (ou blocos
+lógicos) contidos em um único chip. Cada uma dessas células contem certa
+capacidade computacional para implementar funções lógicas e/ou realizar
+roteamento para permitir a comunicação entre as células. Essas operações podem
+acontecer simultaneamente no arranjo das células. 
+
+
+\subsection{Questão 4}
+Diferenciar PROM, PLA, PAL (sugestão: montar uma tabela)
+\begin{center}
+\begin{tabular}{ |c|c|c|c| } 
+ \hline
+ Característica/Nome & PROM & PLA & PAL\\ 
+ quantos niveis & X & 2 & 1\\
+ seus planos & X & plano AND e plano OR & plano AND e plano fixo OR \\
+ desvantagens & ineficiência  & alto custo e atrasos & infelxibilidade do plano OR\\ 
+ \hline
+\end{tabular}
+\end{center}
+
+\subsection{Questão 5}
+Diferenciar CPLD e FPGA (sugestão: montar uma tabela)
+\begin{center}
+\begin{tabular}{ |c|c|c| } 
+ \hline
+ Característica/Nome & CPLD & FPGA\\ 
+ quantidade de chips & 1 & 1\\
+ agrupamento de & blocos SPLDs & arranjos de celulas\\
+ mantem a programação & Não & Sim\\
+ tipo de projeto & menores & grandes e complexos\\
+ Elemento interno de configuração & EPORM/FLASH & SRAM\\
+ interface de configuração & JTAG & JTAG\\
+ flexibilidade nas interconexões & baixa & alta\\
+ tempos de propagação & uniforme & não uniforme\\
+ vantagens & Baixo custo e alta velocidade & tempo e alta capacidade\\
+ desvantagens & difícil para maiores densidades & custo elevado\\
+ \hline
+\end{tabular}
+\end{center}
+
+\end{document}
