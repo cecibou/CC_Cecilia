@@ -1,0 +1,11 @@
+LINK DO OVERLEAF COM O ARTIGO:
+https://www.overleaf.com/read/gdgbnhtspzyf
+
+LINK DA BASE DE DADOS: 
+https://drive.google.com/file/d/1LHtgPyMzP95VVnGJPEIYGdGNWKu2t130/view?usp=sharing
+
+LINK DO VIDEO:
+https://www.youtube.com/watch?v=i81CetSNxqE
+
+LINK DO GOOGLE COLAB COM O CÓDIGO:
+Colab: https://colab.research.google.com/drive/1reL_YcK0uJs5FulO3dmx4u_Wlv3okBrJ?usp=sharing
