@@ -1,0 +1,2 @@
+Tempo para ordenar: 0.022 s.
+O numero de comparacoes: 1479

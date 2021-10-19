@@ -1,0 +1,9 @@
+SEQUENCIAL
+Tempo para ordenar: 0.022 s.
+O numero de comparacoes: 1479
+BINARIA - cmd
+Tempo para ordenar: 0.01 s.
+O numero de comparacoes: 539
+BINARIA-UBUNTU
+Tempo para ordenar: 0.037 s.
+O numero de comparacoes: 539

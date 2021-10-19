@@ -1,0 +1,67 @@
+    // public SerieV pesquisa (SerieV chave) {
+    //     if (this.vazia() || chave == null)
+    //     return null;
+    //     for(int p=0; p < this.ultimo; p++){
+    //         if(this.series[p].equals(chave))
+    //         return this.series[p];  
+    //     }
+    //     return null;
+    // }
+    
+    
+    public void insereFIM (SerieV x) throws Exception {
+        if(this.ultimo >= this.series.length){
+            throw new Exception("Erro: a lista já está cheia");
+        }else{
+            this.series[this.ultimo] = x;
+            this.ultimo = this.ultimo + 1;
+        }    
+    }
+    
+    //inserir qualquer posiçao
+
+    public SerieV retira(int posiçao) throws Exception{
+        if (this.vazia())
+            throw new Exception("Erro: a lista está vazia");
+        SerieV serie = this.series[posiçao];
+        this.ultimo = this.ultimo -1; 
+        for (int aux = posiçao; aux < this.ultimo; aux++){
+            this.series[aux] = this.series[aux + 1];        
+        }
+        return serie;
+    }
+
+    public SerieV retiraPimeiro() throws Exception{
+        if(this.vazia())
+        throw new Exception("Erro: a lista está vazia");
+        SerieV serie = this.series[0];
+        this.ultimo = this.ultimo -1;
+        for(int aux = 0; aux < this.ultimo; aux++){
+            this.series[aux] = this.series[aux + 1];
+        }    
+        return serie;
+    }
+
+    public SerieV primeiro(){
+        this.pos = -1;
+        return this.proximo();
+    }
+
+    public SerieV proximo(){
+        this.pos++;
+        if(this.pos >= this.ultimo){
+            return null;
+        }else{
+            return this.series[this.pos];
+        }         
+    }
+
+    public boolean vazia(){
+        return (this.primeiro == this.ultimo);
+    }
+
+    public void imprime(){
+        for(int aux = this.primeiro; aux < this.ultimo; aux++){
+            MyIO.println(this.series[aux].toString());
+        }
+    }
