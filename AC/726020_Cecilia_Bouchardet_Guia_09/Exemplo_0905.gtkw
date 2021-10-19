@@ -1,0 +1,24 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Fri Oct 01 18:57:13 2021
+[*]
+[dumpfile] "C:\Users\FernandaC\Documents\Cecília\Puc\2_periodo\AC\726020_Cecilia_Bouchardet_Guia_09\Exemplo0905.vcd"
+[dumpfile_mtime] "Fri Oct 01 18:55:29 2021"
+[dumpfile_size] 2192
+[savefile] "C:\Users\FernandaC\Documents\Cecília\Puc\2_periodo\AC\726020_Cecilia_Bouchardet_Guia_09\Exemplo_0905.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -1 -1
+*0.000000 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 197
+[signals_width] 78
+[sst_expanded] 1
+[sst_vpaned_height] 153
+@28
+Exemplo_0905.clock
+Exemplo_0905.p
+Exemplo_0905.p1
+@29
+Exemplo_0905.t1
+[pattern_trace] 1
+[pattern_trace] 0

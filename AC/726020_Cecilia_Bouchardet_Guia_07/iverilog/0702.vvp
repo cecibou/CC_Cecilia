@@ -1,0 +1,77 @@
+#! /usr/bin/vvp
+:ivl_version "10.3 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x7fffbae68100 .scope module, "test_f7" "test_f7" 2 34;
+ .timescale 0 0;
+v0x7fffbae7d0d0_0 .var "s", 0 0;
+v0x7fffbae7d190_0 .net "v", 0 0, L_0x7fffbae7d6e0;  1 drivers
+v0x7fffbae7d280_0 .net "w", 0 0, L_0x7fffbae7d5d0;  1 drivers
+v0x7fffbae7d370_0 .var "x", 0 0;
+v0x7fffbae7d410_0 .var "y", 0 0;
+v0x7fffbae7d500_0 .net "z", 0 0, L_0x7fffbae7d8f0;  1 drivers
+S_0x7fffbae68280 .scope module, "MUX1" "mux" 2 43, 2 20 0, S_0x7fffbae68100;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "s"
+    .port_info 1 /INPUT 1 "a"
+    .port_info 2 /INPUT 1 "b"
+    .port_info 3 /INPUT 1 "select"
+L_0x7fffbae7d750 .functor NOT 1, v0x7fffbae7d0d0_0, C4<0>, C4<0>, C4<0>;
+L_0x7fffbae7d810 .functor AND 1, L_0x7fffbae7d5d0, L_0x7fffbae7d750, C4<1>, C4<1>;
+L_0x7fffbae7d880 .functor AND 1, L_0x7fffbae7d6e0, v0x7fffbae7d0d0_0, C4<1>, C4<1>;
+L_0x7fffbae7d8f0 .functor OR 1, L_0x7fffbae7d810, L_0x7fffbae7d880, C4<0>, C4<0>;
+v0x7fffbae69be0_0 .net "a", 0 0, L_0x7fffbae7d5d0;  alias, 1 drivers
+v0x7fffbae7c400_0 .net "b", 0 0, L_0x7fffbae7d6e0;  alias, 1 drivers
+v0x7fffbae7c4c0_0 .net "not_select", 0 0, L_0x7fffbae7d750;  1 drivers
+v0x7fffbae7c590_0 .net "s", 0 0, L_0x7fffbae7d8f0;  alias, 1 drivers
+v0x7fffbae7c650_0 .net "sa", 0 0, L_0x7fffbae7d810;  1 drivers
+v0x7fffbae7c760_0 .net "sb", 0 0, L_0x7fffbae7d880;  1 drivers
+v0x7fffbae7c820_0 .net "select", 0 0, v0x7fffbae7d0d0_0;  1 drivers
+S_0x7fffbae7c960 .scope begin, "main" "main" 2 46, 2 46 0, S_0x7fffbae68100;
+ .timescale 0 0;
+S_0x7fffbae7cb50 .scope module, "modulo" "f7" 2 42, 2 9 0, S_0x7fffbae68100;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "x"
+    .port_info 1 /OUTPUT 1 "y"
+    .port_info 2 /INPUT 1 "a"
+    .port_info 3 /INPUT 1 "b"
+L_0x7fffbae7d5d0 .functor NOR 1, v0x7fffbae7d370_0, v0x7fffbae7d410_0, C4<0>, C4<0>;
+L_0x7fffbae7d6e0 .functor NAND 1, v0x7fffbae7d370_0, v0x7fffbae7d410_0, C4<1>, C4<1>;
+v0x7fffbae7cd50_0 .net "a", 0 0, v0x7fffbae7d370_0;  1 drivers
+v0x7fffbae7cdf0_0 .net "b", 0 0, v0x7fffbae7d410_0;  1 drivers
+v0x7fffbae7ceb0_0 .net "x", 0 0, L_0x7fffbae7d5d0;  alias, 1 drivers
+v0x7fffbae7cfb0_0 .net "y", 0 0, L_0x7fffbae7d6e0;  alias, 1 drivers
+    .scope S_0x7fffbae68100;
+T_0 ;
+    %fork t_1, S_0x7fffbae7c960;
+    %jmp t_0;
+    .scope S_0x7fffbae7c960;
+t_1 ;
+    %vpi_call 2 47 "$display", "Exemplo_0701 -  Cecilia Caprucho Bouchardet - 726020" {0 0 0};
+    %vpi_call 2 48 "$display", "Test LU's module" {0 0 0};
+    %vpi_call 2 49 "$display", "   x    y    s    z" {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffbae7d370_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fffbae7d410_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffbae7d0d0_0, 0, 1;
+    %delay 1, 0;
+    %vpi_call 2 52 "$monitor", "%4b %4b %4b %4b", v0x7fffbae7d370_0, v0x7fffbae7d410_0, v0x7fffbae7d0d0_0, v0x7fffbae7d500_0 {0 0 0};
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fffbae7d0d0_0, 0, 1;
+    %end;
+    .scope S_0x7fffbae68100;
+t_0 %join;
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "0702.v";

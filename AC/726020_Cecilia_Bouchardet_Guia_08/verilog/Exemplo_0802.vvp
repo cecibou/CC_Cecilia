@@ -1,0 +1,219 @@
+#! /usr/bin/vvp
+:ivl_version "10.3 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x7fffd730ad70 .scope module, "test_fullSub" "test_fullSub" 2 29;
+ .timescale 0 0;
+v0x7fffd7338eb0_0 .net "borrow", 5 0, L_0x7fffd733c600;  1 drivers
+v0x7fffd7338fb0_0 .net "diff", 5 0, L_0x7fffd733c880;  1 drivers
+v0x7fffd7339090_0 .var "x", 5 0;
+v0x7fffd7339150_0 .var "y", 5 0;
+L_0x7fffd7339810 .part v0x7fffd7339090_0, 0, 1;
+L_0x7fffd73398b0 .part v0x7fffd7339150_0, 0, 1;
+L_0x7fffd733a090 .part v0x7fffd7339090_0, 1, 1;
+L_0x7fffd733a180 .part v0x7fffd7339150_0, 1, 1;
+L_0x7fffd733a2e0 .part L_0x7fffd733c600, 0, 1;
+L_0x7fffd733a9f0 .part v0x7fffd7339090_0, 2, 1;
+L_0x7fffd733aad0 .part v0x7fffd7339150_0, 2, 1;
+L_0x7fffd733ac00 .part L_0x7fffd733c600, 1, 1;
+L_0x7fffd733b330 .part v0x7fffd7339090_0, 3, 1;
+L_0x7fffd733b460 .part v0x7fffd7339150_0, 3, 1;
+L_0x7fffd733b680 .part L_0x7fffd733c600, 2, 1;
+L_0x7fffd733bc80 .part v0x7fffd7339090_0, 4, 1;
+L_0x7fffd733bd90 .part v0x7fffd7339150_0, 4, 1;
+L_0x7fffd733bec0 .part L_0x7fffd733c600, 3, 1;
+LS_0x7fffd733c600_0_0 .concat8 [ 1 1 1 1], L_0x7fffd73396b0, L_0x7fffd7339f30, L_0x7fffd733a890, L_0x7fffd733b1d0;
+LS_0x7fffd733c600_0_4 .concat8 [ 1 1 0 0], L_0x7fffd733bb20, L_0x7fffd733c4a0;
+L_0x7fffd733c600 .concat8 [ 4 2 0 0], LS_0x7fffd733c600_0_0, LS_0x7fffd733c600_0_4;
+LS_0x7fffd733c880_0_0 .concat8 [ 1 1 1 1], L_0x7fffd73392e0, L_0x7fffd7339bb0, L_0x7fffd733a4f0, L_0x7fffd733ae60;
+LS_0x7fffd733c880_0_4 .concat8 [ 1 1 0 0], L_0x7fffd733b890, L_0x7fffd733c170;
+L_0x7fffd733c880 .concat8 [ 4 2 0 0], LS_0x7fffd733c880_0_0, LS_0x7fffd733c880_0_4;
+L_0x7fffd733cb90 .part v0x7fffd7339090_0, 5, 1;
+L_0x7fffd733cc30 .part v0x7fffd7339150_0, 5, 1;
+L_0x7fffd733ce00 .part L_0x7fffd733c600, 4, 1;
+S_0x7fffd7309190 .scope module, "FB0" "fullSub" 2 35, 2 9 0, S_0x7fffd730ad70;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "s1"
+    .port_info 1 /OUTPUT 1 "s0"
+    .port_info 2 /INPUT 1 "a1"
+    .port_info 3 /INPUT 1 "b1"
+    .port_info 4 /INPUT 1 "BorrowIn"
+L_0x7fffd730d5b0 .functor NOT 1, L_0x7fffd7339810, C4<0>, C4<0>, C4<0>;
+L_0x7fffd730d620 .functor XOR 1, L_0x7fffd7339810, L_0x7fffd73398b0, C4<0>, C4<0>;
+L_0x7f59cffe0018 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_0x7fffd73392e0 .functor XOR 1, L_0x7fffd730d620, L_0x7f59cffe0018, C4<0>, C4<0>;
+L_0x7fffd73393d0 .functor AND 1, L_0x7fffd73398b0, L_0x7f59cffe0018, C4<1>, C4<1>;
+L_0x7fffd7339540 .functor AND 1, L_0x7fffd730d5b0, L_0x7f59cffe0018, C4<1>, C4<1>;
+L_0x7fffd7339600 .functor AND 1, L_0x7fffd730d5b0, L_0x7fffd73398b0, C4<1>, C4<1>;
+L_0x7fffd73396b0 .functor OR 1, L_0x7fffd73393d0, L_0x7fffd7339540, L_0x7fffd7339600, C4<0>;
+v0x7fffd7309060_0 .net "BorrowIn", 0 0, L_0x7f59cffe0018;  1 drivers
+v0x7fffd7307480_0 .net "a1", 0 0, L_0x7fffd7339810;  1 drivers
+v0x7fffd73058a0_0 .net "b1", 0 0, L_0x7fffd73398b0;  1 drivers
+v0x7fffd7303c70_0 .net "nota1", 0 0, L_0x7fffd730d5b0;  1 drivers
+v0x7fffd73352c0_0 .net "s0", 0 0, L_0x7fffd73392e0;  1 drivers
+v0x7fffd73353d0_0 .net "s1", 0 0, L_0x7fffd73396b0;  1 drivers
+v0x7fffd7335490_0 .net "saida1", 0 0, L_0x7fffd730d620;  1 drivers
+v0x7fffd7335550_0 .net "saida2", 0 0, L_0x7fffd73393d0;  1 drivers
+v0x7fffd7335610_0 .net "saida3", 0 0, L_0x7fffd7339540;  1 drivers
+v0x7fffd73356d0_0 .net "saida4", 0 0, L_0x7fffd7339600;  1 drivers
+S_0x7fffd7335830 .scope module, "FB1" "fullSub" 2 36, 2 9 0, S_0x7fffd730ad70;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "s1"
+    .port_info 1 /OUTPUT 1 "s0"
+    .port_info 2 /INPUT 1 "a1"
+    .port_info 3 /INPUT 1 "b1"
+    .port_info 4 /INPUT 1 "BorrowIn"
+L_0x7fffd7339a70 .functor NOT 1, L_0x7fffd733a090, C4<0>, C4<0>, C4<0>;
+L_0x7fffd7339b10 .functor XOR 1, L_0x7fffd733a090, L_0x7fffd733a180, C4<0>, C4<0>;
+L_0x7fffd7339bb0 .functor XOR 1, L_0x7fffd7339b10, L_0x7fffd733a2e0, C4<0>, C4<0>;
+L_0x7fffd7339c50 .functor AND 1, L_0x7fffd733a180, L_0x7fffd733a2e0, C4<1>, C4<1>;
+L_0x7fffd7339dc0 .functor AND 1, L_0x7fffd7339a70, L_0x7fffd733a2e0, C4<1>, C4<1>;
+L_0x7fffd7339e80 .functor AND 1, L_0x7fffd7339a70, L_0x7fffd733a180, C4<1>, C4<1>;
+L_0x7fffd7339f30 .functor OR 1, L_0x7fffd7339c50, L_0x7fffd7339dc0, L_0x7fffd7339e80, C4<0>;
+v0x7fffd73359d0_0 .net "BorrowIn", 0 0, L_0x7fffd733a2e0;  1 drivers
+v0x7fffd7335a90_0 .net "a1", 0 0, L_0x7fffd733a090;  1 drivers
+v0x7fffd7335b50_0 .net "b1", 0 0, L_0x7fffd733a180;  1 drivers
+v0x7fffd7335bf0_0 .net "nota1", 0 0, L_0x7fffd7339a70;  1 drivers
+v0x7fffd7335cb0_0 .net "s0", 0 0, L_0x7fffd7339bb0;  1 drivers
+v0x7fffd7335dc0_0 .net "s1", 0 0, L_0x7fffd7339f30;  1 drivers
+v0x7fffd7335e80_0 .net "saida1", 0 0, L_0x7fffd7339b10;  1 drivers
+v0x7fffd7335f40_0 .net "saida2", 0 0, L_0x7fffd7339c50;  1 drivers
+v0x7fffd7336000_0 .net "saida3", 0 0, L_0x7fffd7339dc0;  1 drivers
+v0x7fffd73360c0_0 .net "saida4", 0 0, L_0x7fffd7339e80;  1 drivers
+S_0x7fffd7336220 .scope module, "FB2" "fullSub" 2 37, 2 9 0, S_0x7fffd730ad70;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "s1"
+    .port_info 1 /OUTPUT 1 "s0"
+    .port_info 2 /INPUT 1 "a1"
+    .port_info 3 /INPUT 1 "b1"
+    .port_info 4 /INPUT 1 "BorrowIn"
+L_0x7fffd733a410 .functor NOT 1, L_0x7fffd733a9f0, C4<0>, C4<0>, C4<0>;
+L_0x7fffd733a480 .functor XOR 1, L_0x7fffd733a9f0, L_0x7fffd733aad0, C4<0>, C4<0>;
+L_0x7fffd733a4f0 .functor XOR 1, L_0x7fffd733a480, L_0x7fffd733ac00, C4<0>, C4<0>;
+L_0x7fffd733a5b0 .functor AND 1, L_0x7fffd733aad0, L_0x7fffd733ac00, C4<1>, C4<1>;
+L_0x7fffd733a720 .functor AND 1, L_0x7fffd733a410, L_0x7fffd733ac00, C4<1>, C4<1>;
+L_0x7fffd733a7e0 .functor AND 1, L_0x7fffd733a410, L_0x7fffd733aad0, C4<1>, C4<1>;
+L_0x7fffd733a890 .functor OR 1, L_0x7fffd733a5b0, L_0x7fffd733a720, L_0x7fffd733a7e0, C4<0>;
+v0x7fffd7336420_0 .net "BorrowIn", 0 0, L_0x7fffd733ac00;  1 drivers
+v0x7fffd73364e0_0 .net "a1", 0 0, L_0x7fffd733a9f0;  1 drivers
+v0x7fffd73365a0_0 .net "b1", 0 0, L_0x7fffd733aad0;  1 drivers
+v0x7fffd7336640_0 .net "nota1", 0 0, L_0x7fffd733a410;  1 drivers
+v0x7fffd7336700_0 .net "s0", 0 0, L_0x7fffd733a4f0;  1 drivers
+v0x7fffd7336810_0 .net "s1", 0 0, L_0x7fffd733a890;  1 drivers
+v0x7fffd73368d0_0 .net "saida1", 0 0, L_0x7fffd733a480;  1 drivers
+v0x7fffd7336990_0 .net "saida2", 0 0, L_0x7fffd733a5b0;  1 drivers
+v0x7fffd7336a50_0 .net "saida3", 0 0, L_0x7fffd733a720;  1 drivers
+v0x7fffd7336ba0_0 .net "saida4", 0 0, L_0x7fffd733a7e0;  1 drivers
+S_0x7fffd7336d00 .scope module, "FB3" "fullSub" 2 38, 2 9 0, S_0x7fffd730ad70;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "s1"
+    .port_info 1 /OUTPUT 1 "s0"
+    .port_info 2 /INPUT 1 "a1"
+    .port_info 3 /INPUT 1 "b1"
+    .port_info 4 /INPUT 1 "BorrowIn"
+L_0x7fffd733ad80 .functor NOT 1, L_0x7fffd733b330, C4<0>, C4<0>, C4<0>;
+L_0x7fffd733adf0 .functor XOR 1, L_0x7fffd733b330, L_0x7fffd733b460, C4<0>, C4<0>;
+L_0x7fffd733ae60 .functor XOR 1, L_0x7fffd733adf0, L_0x7fffd733b680, C4<0>, C4<0>;
+L_0x7fffd733af20 .functor AND 1, L_0x7fffd733b460, L_0x7fffd733b680, C4<1>, C4<1>;
+L_0x7fffd733b060 .functor AND 1, L_0x7fffd733ad80, L_0x7fffd733b680, C4<1>, C4<1>;
+L_0x7fffd733b120 .functor AND 1, L_0x7fffd733ad80, L_0x7fffd733b460, C4<1>, C4<1>;
+L_0x7fffd733b1d0 .functor OR 1, L_0x7fffd733af20, L_0x7fffd733b060, L_0x7fffd733b120, C4<0>;
+v0x7fffd7336f00_0 .net "BorrowIn", 0 0, L_0x7fffd733b680;  1 drivers
+v0x7fffd7336fe0_0 .net "a1", 0 0, L_0x7fffd733b330;  1 drivers
+v0x7fffd73370a0_0 .net "b1", 0 0, L_0x7fffd733b460;  1 drivers
+v0x7fffd7337170_0 .net "nota1", 0 0, L_0x7fffd733ad80;  1 drivers
+v0x7fffd7337230_0 .net "s0", 0 0, L_0x7fffd733ae60;  1 drivers
+v0x7fffd7337340_0 .net "s1", 0 0, L_0x7fffd733b1d0;  1 drivers
+v0x7fffd7337400_0 .net "saida1", 0 0, L_0x7fffd733adf0;  1 drivers
+v0x7fffd73374c0_0 .net "saida2", 0 0, L_0x7fffd733af20;  1 drivers
+v0x7fffd7337580_0 .net "saida3", 0 0, L_0x7fffd733b060;  1 drivers
+v0x7fffd73376d0_0 .net "saida4", 0 0, L_0x7fffd733b120;  1 drivers
+S_0x7fffd7337830 .scope module, "FB4" "fullSub" 2 39, 2 9 0, S_0x7fffd730ad70;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "s1"
+    .port_info 1 /OUTPUT 1 "s0"
+    .port_info 2 /INPUT 1 "a1"
+    .port_info 3 /INPUT 1 "b1"
+    .port_info 4 /INPUT 1 "BorrowIn"
+L_0x7fffd733b7b0 .functor NOT 1, L_0x7fffd733bc80, C4<0>, C4<0>, C4<0>;
+L_0x7fffd733b820 .functor XOR 1, L_0x7fffd733bc80, L_0x7fffd733bd90, C4<0>, C4<0>;
+L_0x7fffd733b890 .functor XOR 1, L_0x7fffd733b820, L_0x7fffd733bec0, C4<0>, C4<0>;
+L_0x7fffd733b930 .functor AND 1, L_0x7fffd733bd90, L_0x7fffd733bec0, C4<1>, C4<1>;
+L_0x7fffd733ba00 .functor AND 1, L_0x7fffd733b7b0, L_0x7fffd733bec0, C4<1>, C4<1>;
+L_0x7fffd733ba70 .functor AND 1, L_0x7fffd733b7b0, L_0x7fffd733bd90, C4<1>, C4<1>;
+L_0x7fffd733bb20 .functor OR 1, L_0x7fffd733b930, L_0x7fffd733ba00, L_0x7fffd733ba70, C4<0>;
+v0x7fffd7337a80_0 .net "BorrowIn", 0 0, L_0x7fffd733bec0;  1 drivers
+v0x7fffd7337b60_0 .net "a1", 0 0, L_0x7fffd733bc80;  1 drivers
+v0x7fffd7337c20_0 .net "b1", 0 0, L_0x7fffd733bd90;  1 drivers
+v0x7fffd7337cc0_0 .net "nota1", 0 0, L_0x7fffd733b7b0;  1 drivers
+v0x7fffd7337d80_0 .net "s0", 0 0, L_0x7fffd733b890;  1 drivers
+v0x7fffd7337e90_0 .net "s1", 0 0, L_0x7fffd733bb20;  1 drivers
+v0x7fffd7337f50_0 .net "saida1", 0 0, L_0x7fffd733b820;  1 drivers
+v0x7fffd7338010_0 .net "saida2", 0 0, L_0x7fffd733b930;  1 drivers
+v0x7fffd73380d0_0 .net "saida3", 0 0, L_0x7fffd733ba00;  1 drivers
+v0x7fffd7338220_0 .net "saida4", 0 0, L_0x7fffd733ba70;  1 drivers
+S_0x7fffd7338380 .scope module, "FB5" "fullSub" 2 40, 2 9 0, S_0x7fffd730ad70;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "s1"
+    .port_info 1 /OUTPUT 1 "s0"
+    .port_info 2 /INPUT 1 "a1"
+    .port_info 3 /INPUT 1 "b1"
+    .port_info 4 /INPUT 1 "BorrowIn"
+L_0x7fffd733bd20 .functor NOT 1, L_0x7fffd733cb90, C4<0>, C4<0>, C4<0>;
+L_0x7fffd733c100 .functor XOR 1, L_0x7fffd733cb90, L_0x7fffd733cc30, C4<0>, C4<0>;
+L_0x7fffd733c170 .functor XOR 1, L_0x7fffd733c100, L_0x7fffd733ce00, C4<0>, C4<0>;
+L_0x7fffd733c210 .functor AND 1, L_0x7fffd733cc30, L_0x7fffd733ce00, C4<1>, C4<1>;
+L_0x7fffd733c330 .functor AND 1, L_0x7fffd733bd20, L_0x7fffd733ce00, C4<1>, C4<1>;
+L_0x7fffd733c3f0 .functor AND 1, L_0x7fffd733bd20, L_0x7fffd733cc30, C4<1>, C4<1>;
+L_0x7fffd733c4a0 .functor OR 1, L_0x7fffd733c210, L_0x7fffd733c330, L_0x7fffd733c3f0, C4<0>;
+v0x7fffd7338580_0 .net "BorrowIn", 0 0, L_0x7fffd733ce00;  1 drivers
+v0x7fffd7338660_0 .net "a1", 0 0, L_0x7fffd733cb90;  1 drivers
+v0x7fffd7338720_0 .net "b1", 0 0, L_0x7fffd733cc30;  1 drivers
+v0x7fffd73387f0_0 .net "nota1", 0 0, L_0x7fffd733bd20;  1 drivers
+v0x7fffd73388b0_0 .net "s0", 0 0, L_0x7fffd733c170;  1 drivers
+v0x7fffd73389c0_0 .net "s1", 0 0, L_0x7fffd733c4a0;  1 drivers
+v0x7fffd7338a80_0 .net "saida1", 0 0, L_0x7fffd733c100;  1 drivers
+v0x7fffd7338b40_0 .net "saida2", 0 0, L_0x7fffd733c210;  1 drivers
+v0x7fffd7338c00_0 .net "saida3", 0 0, L_0x7fffd733c330;  1 drivers
+v0x7fffd7338d50_0 .net "saida4", 0 0, L_0x7fffd733c3f0;  1 drivers
+    .scope S_0x7fffd730ad70;
+T_0 ;
+    %vpi_call 2 44 "$display", "Exemplo0801 - Cecilia Capurucho Bouchardet - 726020" {0 0 0};
+    %vpi_call 2 45 "$display", "Test ALU\342\200\231s full subtrator" {0 0 0};
+    %vpi_call 2 47 "$monitor", "%6b - %6b = %6b %6b", v0x7fffd7339090_0, v0x7fffd7339150_0, v0x7fffd7338fb0_0, v0x7fffd7338eb0_0 {0 0 0};
+    %delay 1, 0;
+    %pushi/vec4 16, 0, 6;
+    %store/vec4 v0x7fffd7339090_0, 0, 6;
+    %pushi/vec4 16, 0, 6;
+    %store/vec4 v0x7fffd7339150_0, 0, 6;
+    %delay 1, 0;
+    %pushi/vec4 17, 0, 6;
+    %store/vec4 v0x7fffd7339090_0, 0, 6;
+    %pushi/vec4 13, 0, 6;
+    %store/vec4 v0x7fffd7339150_0, 0, 6;
+    %delay 1, 0;
+    %pushi/vec4 19, 0, 6;
+    %store/vec4 v0x7fffd7339090_0, 0, 6;
+    %pushi/vec4 19, 0, 6;
+    %store/vec4 v0x7fffd7339150_0, 0, 6;
+    %delay 1, 0;
+    %pushi/vec4 3, 0, 6;
+    %store/vec4 v0x7fffd7339090_0, 0, 6;
+    %pushi/vec4 18, 0, 6;
+    %store/vec4 v0x7fffd7339150_0, 0, 6;
+    %delay 1, 0;
+    %pushi/vec4 24, 0, 6;
+    %store/vec4 v0x7fffd7339090_0, 0, 6;
+    %pushi/vec4 27, 0, 6;
+    %store/vec4 v0x7fffd7339150_0, 0, 6;
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "Exemplo_0802.v";
